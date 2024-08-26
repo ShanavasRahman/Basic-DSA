@@ -51,6 +51,13 @@ class BST{
             this.preOrder(node.right);
         }
     }
+    postOrder(node = this.root) {
+        if (node != null) {
+            this.postOrder(node.left);
+            this.postOrder(node.right);
+            console.log(node.value);
+        }
+    }
 
 }
 
@@ -64,4 +71,4 @@ bst.insert(3);
 bst.insert(7);
 bst.insert(12);
 bst.insert(18);
-bst.preOrder();
+bst.postOrder();
