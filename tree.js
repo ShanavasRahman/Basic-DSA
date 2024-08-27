@@ -1,6 +1,3 @@
-
-
-
 class Node{
     constructor(value) {
         this.left = null;
@@ -8,6 +5,7 @@ class Node{
         this.right = null;
     }
 }
+
 
 class BST{
     constructor() {
@@ -22,6 +20,7 @@ class BST{
             this.insertNode(this.root, newNode);
         }
     }
+
     insertNode(node, newNode) {
         if (newNode.value < node.value) {
             if (node.left == null) {
@@ -37,6 +36,24 @@ class BST{
             }
         }
     }
+
+    search(value) {
+        return this.searchNode(this.root,value)
+    }
+
+    searchNode(node, value) {
+        if (node == null) {
+            return null
+        }
+        if (value < node.value) {
+            return this.searchNode(node.left, value);
+        } else if (value > node.value) {
+            return this.searchNode(node.right, value);
+        } else {
+            return node;
+        }
+    }
+
     inOrder(node = this.root) {
         if (node != null) {
             this.inOrder(node.left);
@@ -44,26 +61,10 @@ class BST{
             this.inOrder(node.right);
         }
     }
-    preOrder(node = this.root) {
-        if (node != null) {
-            console.log(node.value);
-            this.preOrder(node.left);
-            this.preOrder(node.right);
-        }
-    }
-    postOrder(node = this.root) {
-        if (node != null) {
-            this.postOrder(node.left);
-            this.postOrder(node.right);
-            console.log(node.value);
-        }
-    }
-
 }
 
 
 const bst = new BST();
-
 bst.insert(10);
 bst.insert(5);
 bst.insert(15);
@@ -71,4 +72,4 @@ bst.insert(3);
 bst.insert(7);
 bst.insert(12);
 bst.insert(18);
-bst.postOrder();
+console.log(bst.search(15));
