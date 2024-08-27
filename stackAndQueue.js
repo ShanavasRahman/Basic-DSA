@@ -96,4 +96,4 @@ list.push(20)
 list.push(30)
 list.push(40)
 list.pop();
-list.print();
+// list.print();
