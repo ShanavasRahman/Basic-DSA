@@ -125,5 +125,5 @@ bst.insert(3);
 bst.insert(7);
 bst.insert(12);
 bst.insert(18);
-// console.log(bst.search(15));
+console.log(bst.search(15));
 console.log(bst.delete(5))
