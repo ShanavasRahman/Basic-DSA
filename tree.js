@@ -54,58 +54,55 @@ class BST{
         }
     }
     delete(value) {
-        return this.root = this.deleteNode(this.root, value);
+        return this.deleteNode(this.root, value);
     }
 
     deleteNode(node, value) {
-        if (node === null) {
-            return null;
-        }
-        if (value < node.value) {
-            console.log(node);
+        if (value<node.value) {
             node.left = this.deleteNode(node.left, value);
             return node
         } else if (value > node.value) {
             node.right = this.deleteNode(node.right, value);
-            return node;
+            return node
         } else {
-            // if it is a leaf node
-            if (node.left == null && node.right == null) {
+            //if it is leaf node
+
+            if (node.right == null && node.left == null) {
                 node = null;
                 return node;
             }
 
-            //node has only one child
-            if (node.left == null) {
-                node = node.right;
-                return node
-            } else if (node.right == null) {
+            // if it has one child
+
+            if (node.right == null) {
                 node = node.left;
+                return node
+            } else if (node.left == null) {
+                node = node.right;
                 return node
             }
 
-            //if the node has two children
+            //if it has two children
 
             const minNode = this.findMinNode(node.right);
             node.value = minNode.value;
 
-            // delete the inorder successor
-
-            node.right = this.deleteNode(node.right, minNode.value)
+            //delete the successor
+            node.right = this.deleteNode(node.right, minNode.value);
             return node;
+
         }
-
-
     }
-
 
     findMinNode(node) {
         if (node.left == null) {
             return node;
         } else {
-            return this.findMinNode(node.left);
+           return this.findMinNode(node.left)
         }
     }
+
+
 
     inOrder(node = this.root) {
         if (node != null) {
@@ -125,5 +122,5 @@ bst.insert(3);
 bst.insert(7);
 bst.insert(12);
 bst.insert(18);
-console.log(bst.search(15));
-console.log(bst.delete(5))
+bst.delete(5);
+bst.inOrder()
