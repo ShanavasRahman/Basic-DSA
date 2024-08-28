@@ -66,7 +66,6 @@ class TrieNode {
   trie.insert("banana");
   trie.insert("orange");
   
-  console.log(trie.search("apple")); // true
   console.log(trie.search("grape")); // false
   console.log(trie.startsWith("app")); // true
   console.log(trie.getWords()); // ["apple", "banana", "orange"]
