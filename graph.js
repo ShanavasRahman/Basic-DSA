@@ -1,45 +1,42 @@
 class Graph{
     constructor() {
-        this.adjacencyList = {};
+        this.adjList = {};
     }
-
 
     addVertex(vertex) {
-        if (!this.adjacencyList[vertex]) {
-            this.adjacencyList[vertex] = [];
+        if (!this.adjList[vertex]) {
+            this.adjList[vertex] = [];
+        }
+    }
+
+    addEdge(vertex1, vertex2) {
+        if (this.adjList[vertex1] && this.adjList[vertex2]) {
+            this.adjList[vertex1].push(vertex2);
+            this.adjList[vertex2].push(vertex1);
         }
     }
 
 
-    addEdge(v1, v2) {
-        if (this.adjacencyList[v1] && this.adjacencyList[v2]) {
-            this.adjacencyList[v1].push(v2);
-            this.adjacencyList[v2].push(v1);
-        }
-    }
+
 
     print() {
-        for (let vertex in this.adjacencyList) {
-            console.log(`${vertex} --> ${this.adjacencyList[vertex]}`);
+        for (let vertex in this.adjList) {
+            console.log(`${vertex} ---> ${this.adjList[vertex].join(", ")}`);
         }
     }
 }
 
-
 const g = new Graph();
-g.addVertex("A");
-g.addVertex("B");
-g.addVertex("C");
-g.addVertex("D");
-g.addVertex("E");
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
 
 g.addEdge("A", "B");
 g.addEdge("B", "C");
 g.addEdge("C", "D");
-g.addEdge("D", "E");
-g.addEdge("E", "A");
+g.addEdge("D", "A");
 
-g.print();
-
+g.print()
 
 
