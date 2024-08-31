@@ -12,16 +12,28 @@ class Trie{
 
     insert(word) {
         let node = this.root;
+
         for (let char of word) {
             if (!node.children[char]) {
-                node.children[char] = new TrieNode;
+                node.children[char] = new TrieNode();
             }
             node = node.children[char];
-            // console.log(node);
         }
         node.isEndOfWord = true;
-        // console.log(this.root);
     }
+
+
+    startsWith(prefix) {
+        let node = this.root;
+        for (let char of prefix) {
+            if (!node.children[char]) {
+                return false;
+            }
+            node = node.children[char];
+        }
+        return true;
+    }
+    
 
 }
 
@@ -29,5 +41,9 @@ class Trie{
 const trie = new Trie();
 
 trie.insert("apple");
-trie.print();
+trie.insert("bat");
+trie.insert("app");
+trie.insert("ice");
+trie.insert("bet");
+console.log(trie.startsWith("app"));
   
