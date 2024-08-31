@@ -57,7 +57,32 @@ class MaxHeap {
       return max;
     }
   
-
+    // Maintain the heap property after extraction
+    heapifyDown() {
+      let index = 0;
+      const length = this.heap.length;
+  
+      while (true) {
+        const leftChildIndex = this.getLeftChildIndex(index);
+        const rightChildIndex = this.getRightChildIndex(index);
+        let largest = index;
+  
+        if (leftChildIndex < length && this.heap[leftChildIndex] > this.heap[largest]) {
+          largest = leftChildIndex;
+        }
+  
+        if (rightChildIndex < length && this.heap[rightChildIndex] > this.heap[largest]) {
+          largest = rightChildIndex;
+        }
+  
+        if (largest !== index) {
+          this.swap(index, largest);
+          index = largest;
+        } else {
+          break;
+        }
+      }
+    }
   
     // Helper method to display the heap
     printHeap() {
