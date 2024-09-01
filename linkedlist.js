@@ -173,37 +173,62 @@ class Node{
   }
 }
 
-
 class LinkedList{
   constructor() {
     this.head = null;
     this.tail = null;
-    this.size = 0;
   }
 
-  insert(data) {
-    let newNode = new Node(data);
-
+  append(data) {
+    const newNode = new Node(data);
     if (this.head == null) {
-      this.head = newNode;
+      this.head = newNode
       this.tail = newNode;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
   }
+  prepend(data) {
+    const newNode = new Node(data);
+    if (this.head == null) {
+      this.head = newNode;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current=current.next
+      }
+      current.next = newNode;
+    }
+  }
 
-  rev() {
-    let prev = null;
+  reverse() {
     let current = this.head;
-    let next = null;
+    let prev = null;
     while (current) {
-      next = current.next;
+      let next = current.next;
       current.next = prev;
       prev = current;
       current = next;
     }
     this.head = prev;
+  }
+
+  delete(target) {
+    let current = this.head;
+    let prev = null;
+    if (this.head.data == target) {
+      this.head = this.head.next;
+      return
+    }
+    while (current) {
+      if (current.data == target) {
+        prev.next = current.next;
+        return
+      }
+      prev = current;
+      current = current.next;
+    }
   }
 
   print() {
@@ -215,12 +240,14 @@ class LinkedList{
   }
 }
 
-const list = new LinkedList();
 
-list.insert(10)
-list.insert(12)
-list.insert(13)
-list.insert(15)
-list.insert(16);
-list.rev()
+
+const list = new LinkedList();
+list.prepend(10);
+list.prepend(20);
+list.prepend(30);
+list.prepend(40);
+list.prepend(50);
+list.reverse();
+list.delete(50);
 list.print();
