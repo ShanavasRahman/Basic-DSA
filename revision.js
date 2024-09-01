@@ -92,64 +92,145 @@
 
 
 
-class TreeNode{
-    constructor(value) {
-        this.left = null;
-        this.value = value;
-        this.right = null;
+// class TreeNode{
+//     constructor(value) {
+//         this.left = null;
+//         this.value = value;
+//         this.right = null;
+//     }
+// }
+
+// class BST{
+//     constructor(){
+//     this.root = null;
+//     }
+
+//     insert(value) {
+//         let newNode = new TreeNode(value);
+//         if (this.root == null) {
+//             this.root = newNode;
+//         } else {
+//             this.insertNode(this.root, newNode);
+//         }
+//     }
+
+//     insertNode(node, newNode) {
+//         if (newNode.value < node.value) {
+//             if (node.left == null) {
+//                 node.left = newNode;
+//             } else {
+//                 this.insertNode(node.left, newNode);
+//             }
+//         } else if (newNode.value > node.value) {
+//             if (node.right == null) {
+//                 node.right = newNode;
+//             } else {
+//                 this.insertNode(node.right, newNode);
+//             }
+//         }
+//     }
+
+//     delete(target) {
+//         return this.deleteNode(this.root, target);
+//     }
+
+//     deleteNode(node, target) {
+//         if (target < node.value) {
+//             node.left = this.deleteNode(node.left, target);
+//             return node
+//         } else if (target > node.value) {
+//             node.right = this.deleteNode(node.left, target);
+//             return node
+//         } else {
+
+//             //if the target node is a leaf node
+//             if (node.left == null && node.right == null) {
+//                 node = null;
+//                 return node;
+//             }
+
+//             // if the target node have one child
+//             if (node.left == null) {
+//                 node = node.right;
+//                 return node;
+//             } else if (node.right == null) {
+//                 node = node.left;
+//                 return node;
+//             }
+
+
+//             //if the target have two children
+
+//             if (node.right !== null && node.left !== null) {
+//                 let minNode = this.findMinNode(node.right);
+//                 node.value = minNode.value;
+            
+
+//                 //deleting the successor
+//                 node.right = this.deleteNode(node.right, minNode.value);
+//                 return node;
+//             }
+//         }
+
+//     }
+    
+//     findMinNode(node){
+//     if (node.left == null) {
+//             return node;
+//         } else {
+//         return this.findMinNode(node.left);
+        
+//         }
+//     }
+
+
+//     preOrder(node=this.root) {
+//         if (node != null) {
+//             console.log(node.value);
+//             this.preOrder(node.left);
+//             this.preOrder(node.right);
+//         }
+//     }
+// }
+
+
+// const bst = new BST();
+// bst.insert(10)
+// bst.insert(8)
+// bst.insert(20)
+// bst.insert(6)
+// bst.insert(9);
+// bst.insert(15)
+// bst.insert(5)
+// bst.insert(30);
+// bst.delete(8);
+
+// bst.preOrder();
+
+
+
+//***************************************Graph
+
+class Graph{
+    constructor() {
+        this.adjList={}
+    }
+
+    addVertex(vertex) {
+        if (!this.adjList[vertex]) {
+            this.adjList[vertex] = [];
+        }
+    }
+
+    addEdge(vertex, ...vertices) {
+        if (this.adjList[vertex]) {
+            for (let otherVertex of vertices) {
+                this.adjList[vertex].push(otherVertex);
+                this.adjList[otherVertex].push(vertex);
+            }
+        }
     }
 }
-
-class BST{
-    constructor(){
-    this.root = null;
-    }
-
-    insert(value) {
-        let newNode = new TreeNode(value);
-        if (this.root == null) {
-            this.root = newNode;
-        } else {
-            this.insertNode(this.root, newNode);
-        }
-    }
-
-    insertNode(node, newNode) {
-        if (newNode.value < node.value) {
-            if (node.left == null) {
-                node.left = newNode;
-            } else {
-                this.insertNode(node.left, newNode);
-            }
-        } else if (newNode.value > node.value) {
-            if (node.right == null) {
-                node.right = newNode;
-            } else {
-                this.insertNode(node.right, newNode);
-            }
-        }
-    }
-
-    delete(target)
-
-    preOrder(node=this.root) {
-        if (node != null) {
-            console.log(node.value);
-            this.preOrder(node.left);
-            this.preOrder(node.right);
-        }
-    }
-}
-
-
-const bst = new BST();
-bst.insert(10)
-bst.insert(8)
-bst.insert(20)
-bst.insert(6)
-bst.insert(15)
-bst.insert(5)
-bst.preOrder();
 
 
 
