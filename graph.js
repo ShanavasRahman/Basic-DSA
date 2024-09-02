@@ -26,10 +26,10 @@ class Graph{
             const currentVertex = queue.shift();
             console.log(currentVertex);
 
-            this.adjList[currentVertex].forEach(element => {
-                if (!visited[element]) {
-                    visited[element] = true;
-                    queue.push(element);
+            this.adjList[currentVertex].forEach(neighbourVertex => {
+                if (!visited[neighbourVertex]) {
+                    visited[neighbourVertex] = true;
+                    queue.push(neighbourVertex);
                 }
             });
         }

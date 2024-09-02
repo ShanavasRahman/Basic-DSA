@@ -211,26 +211,146 @@
 
 //***************************************Graph
 
-class Graph{
+// class Graph{
+//     constructor() {
+//         this.adjList={}
+//     }
+
+//     addVertex(vertex) {
+//         if (!this.adjList[vertex]) {
+//             this.adjList[vertex] = [];
+//         }
+//     }
+
+//     addEdge(vertex, ...vertices) {
+//         for (let otherVertex of vertices) {
+//             if (this.adjList[vertex] && this.adjList[otherVertex]) {
+//                 this.adjList[vertex].push(otherVertex);
+//                 this.adjList[otherVertex].push(vertex);
+//             }
+//         }
+//     }
+
+
+//     bfs(startingVertex) {
+//         const queue = [startingVertex];
+//         const visited = {};
+//         visited[startingVertex] = true;
+//         while (queue.length > 0) {
+//             const currentVertex = queue.shift();
+//             console.log(currentVertex);
+
+//             this.adjList[currentVertex].forEach(neighbour => {
+//                 if (!visited[neighbour]) {
+//                     visited[neighbour] = true;
+//                     queue.push(neighbour);
+//                 }
+                
+//             });
+//         }
+//     }
+
+//     dfs(startingVertex) {
+//         const stack = [startingVertex];
+//         const visited = {};
+//         while (stack.length > 0) {
+//             const currentVertex = stack.pop();
+//             if (!visited[currentVertex]) {
+//                 visited[currentVertex] = true;
+//                 console.log(currentVertex);
+//                 this.adjList[currentVertex].forEach((neighbour) => {
+//                     if (!visited[neighbour]) {
+//                         stack.push(neighbour);
+//                     }
+//                 })
+//             }
+            
+//         }
+//     }
+
+//     deleteVertex(vertex) {
+//         for (let key in this.adjList) {
+//             this.adjList[key]=this.adjList[key].filter(v => v != vertex);
+//         }
+//         delete this.adjList[vertex];
+//     }
+
+
+//     print() {
+//         console.log(this.adjList)
+//         for (let vertex in this.adjList) {
+//             console.log(`${vertex}-->${this.adjList[vertex].join(",")}`)
+//         }
+//     }
+// }
+
+
+// const g = new Graph();
+// g.addVertex("A");
+// g.addVertex("B");
+// g.addVertex("C");
+// g.addVertex("D");
+// g.addVertex("E");
+// g.addEdge("A", "B");
+// g.addEdge("B", "C");
+// g.addEdge("C", "D");
+// g.addEdge("D", "E");
+// g.addEdge("E", "A");
+
+// g.deleteVertex("A");
+// g.print();
+
+
+//*************************************Trie
+
+class TrieNode{
     constructor() {
-        this.adjList={}
-    }
-
-    addVertex(vertex) {
-        if (!this.adjList[vertex]) {
-            this.adjList[vertex] = [];
-        }
-    }
-
-    addEdge(vertex, ...vertices) {
-        if (this.adjList[vertex]) {
-            for (let otherVertex of vertices) {
-                this.adjList[vertex].push(otherVertex);
-                this.adjList[otherVertex].push(vertex);
-            }
-        }
+        this.children = {};
+        this.isEndOfWord = false;
     }
 }
 
+class Trie{
+    constructor() {
+        this.root = new TrieNode();
+    }
+
+    insert(word) {
+        let node = this.root;
+        for (let char of word) {
+            if (!node.children[char]) {
+                node.children[char] = new TrieNode();
+            }
+            node = node.children[char];
+        }
+        node.isEndOfWord = true;
+    }
+
+    wordSearch(prefix) {
+        let node = this.root
+        for (let char of prefix) {
+            if (!node.children[char]) {
+                return false
+            }
+            node = node.children[char];
+        }
+        return true;
+    }
+}
+
+
+
+
+const t = new Trie();
+
+t.insert("apple");
+t.insert("bat");
+t.insert("bike");
+t.insert("aeroplane");
+t.insert("cat");
+t.insert("car");
+t.insert("dog");
+
+console.log(t.wordSearch("apple"));
 
 
