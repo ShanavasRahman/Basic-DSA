@@ -65,3 +65,32 @@ insert(key) {
             this.heapifyDown(smallest);
         }
     }
+    peek() {
+        if (this.heap.length === 0) {
+            return null;
+        }
+        return this.heap[0];
+    }
+
+    // Convert an array into a heap
+    heapify(array) {
+        this.heap = array;
+        for (let i = Math.floor(this.heap.length / 2); i >= 0; i--) {
+            this.heapifyDown(i);
+        }
+    }
+}
+
+// Usage example
+const minHeap = new MinHeap();
+minHeap.insert(3);
+minHeap.insert(1);
+minHeap.insert(6);
+minHeap.insert(5);
+minHeap.insert(2);
+minHeap.insert(4);
+
+console.log(minHeap.extractMin()); // 1
+console.log(minHeap.extractMin()); // 2
+console.log(minHeap.extractMin()); // 3
+console.log(minHeap.peek());  
