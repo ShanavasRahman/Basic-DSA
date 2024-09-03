@@ -26,4 +26,11 @@ swap(i, j) {
 insert(key) {
     this.heap.push(key);
     this.heapifyUp(this.heap.length - 1);
-}
+    }
+    
+    heapifyUp(i) {
+        while (i > 0 && this.heap[this.parentIndex(i)] > this.heap[i]) {
+            this.swap(i, this.parentIndex(i));
+            i = this.parentIndex(i);
+        }
+    }
