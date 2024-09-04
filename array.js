@@ -119,4 +119,14 @@ let uniqueArr = [...new Set(arr)];
 console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
 
 
+// Flatten a Nested Array
+// Question: How do you flatten a nested array?
+
+
+let nestedArr = [1, [2, [3, [4, 5]]]];
+let flatArr = nestedArr.flat(Infinity);
+console.log(flatArr); // Output: [1, 2, 3, 4, 5]
+
+
+
 
