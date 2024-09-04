@@ -98,6 +98,15 @@
 //Reverse an Array
 //Question: How do you reverse the elements of an array in JavaScript?
 
-let arr = [1, 2, 3, 4, 5];
-let reversedArr = arr.reverse();
-console.log(reversedArr); // Output: [5, 4, 3, 2, 1]
+// let arr = [1, 2, 3, 4, 5];
+// let reversedArr = arr.reverse();
+// console.log(reversedArr);
+
+// Find the Maximum Value in an Array
+// Question: How do you find the maximum value in an array?
+let arr = [10, 20, 30, 5, 40];
+let maxVal = Math.max(...arr);
+console.log(maxVal); // Output: 40
+
+
+
