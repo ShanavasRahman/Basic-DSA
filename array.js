@@ -31,7 +31,7 @@
 
 //splice(index to start changing, delete count,elements to add)
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // function reverseArr(arr) {
 //     let newArr = arr.splice(2,4);
@@ -79,17 +79,25 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
 // console.log(sum);
 
-const promise = new Promise((resolve, reject) => {
-    let a = 0;
-    if (a) {
-        resolve("Hello")
-    } else {
-        reject("rejected")
-    }
-})
+// const promise = new Promise((resolve, reject) => {
+//     let a = 0;
+//     if (a) {
+//         resolve("Hello")
+//     } else {
+//         reject("rejected")
+//     }
+// })
 
-promise.then((res) => {
-    console.log(res);
-}).catch((error) => {
-    console.log(error)
-})
+// promise.then((res) => {
+//     console.log(res);
+// }).catch((error) => {
+//     console.log(error)
+// })
+
+
+//Reverse an Array
+//Question: How do you reverse the elements of an array in JavaScript?
+
+let arr = [1, 2, 3, 4, 5];
+let reversedArr = arr.reverse();
+console.log(reversedArr); // Output: [5, 4, 3, 2, 1]
