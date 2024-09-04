@@ -104,9 +104,19 @@
 
 // Find the Maximum Value in an Array
 // Question: How do you find the maximum value in an array?
-let arr = [10, 20, 30, 5, 40];
-let maxVal = Math.max(...arr);
-console.log(maxVal); // Output: 40
+// let arr = [10, 20, 30, 5, 40];
+// let maxVal = Math.max(...arr);
+// console.log(maxVal); // Output: 40
+
+
+
+
+// Remove Duplicates from an Array
+// Question: How can you remove duplicate elements from an array?
+
+let arr = [1, 2, 2, 3, 4, 4, 5];
+let uniqueArr = [...new Set(arr)];
+console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
 
 
 
