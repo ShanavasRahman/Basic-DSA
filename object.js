@@ -9,11 +9,30 @@
 
 //   What is the this keyword in JavaScript objects, and how is it used? this refers to the object that is executing the current function.
 
+// let person = {
+//     name: "John",
+//     greet: function() {
+//       console.log("Hello, " + this.name);
+//     }
+//   };
+//   person.greet(); // "Hello, John"
+
+//What is the purpose of getters and setters in a JavaScript object? Getters and setters allow you to define methods that control access to an object's properties.
+
 let person = {
-    name: "John",
-    greet: function() {
-      console.log("Hello, " + this.name);
+    firstName: "John",
+    lastName: "Doe",
+    get fullName() {
+      return this.firstName + " " + this.lastName;
+    },
+    set fullName(name) {
+      let parts = name.split(" ");
+      this.firstName = parts[0];
+      this.lastName = parts[1];
     }
   };
-  person.greet(); // "Hello, John"
+  console.log(person.fullName); // "John Doe"
+  person.fullName = "Jane Smith";
+  console.log(person.firstName); // "Jane"
+  
   
