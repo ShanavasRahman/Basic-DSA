@@ -19,20 +19,29 @@
 
 //What is the purpose of getters and setters in a JavaScript object? Getters and setters allow you to define methods that control access to an object's properties.
 
-let person = {
-    firstName: "John",
-    lastName: "Doe",
-    get fullName() {
-      return this.firstName + " " + this.lastName;
-    },
-    set fullName(name) {
-      let parts = name.split(" ");
-      this.firstName = parts[0];
-      this.lastName = parts[1];
-    }
-  };
-  console.log(person.fullName); // "John Doe"
-  person.fullName = "Jane Smith";
-  console.log(person.firstName); // "Jane"
+// let person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     get fullName() {
+//       return this.firstName + " " + this.lastName;
+//     },
+//     set fullName(name) {
+//       let parts = name.split(" ");
+//       this.firstName = parts[0];
+//       this.lastName = parts[1];
+//     }
+//   };
+//   console.log(person.fullName); // "John Doe"
+//   person.fullName = "Jane Smith";
+//   console.log(person.firstName); // "Jane"
+
+//How can you loop through the properties of an object in JavaScript? You can use the for...in loop to iterate through an object's properties.
+
+let person = { name: "John", age: 30, city: "New York" };
+for (let key in person) {
+  console.log(key + ": " + person[key]);
+}
+
+
   
   
