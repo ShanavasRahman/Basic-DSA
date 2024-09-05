@@ -43,12 +43,19 @@
 // }
 
 //What is object destructuring in JavaScript, and how does it work? Object destructuring allows you to extract values from an object into variables.
-let person = { name: "John", age: 30, city: "New York" };
-let { name, age, city } = person;
-console.log(name); // "John"
-console.log(age); // 30
+// let person = { name: "John", age: 30, city: "New York" };
+// let { name, age, city } = person;
+// console.log(name); // "John"
+// console.log(age); // 30
 
-
+//How do you create an object constructor function in JavaScript? You can create a constructor function to define objects of a similar type.
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  let person1 = new Person("Alice", 25);
+  let person2 = new Person("Bob", 30);
+  
 
   
   
