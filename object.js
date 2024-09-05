@@ -37,10 +37,17 @@
 
 //How can you loop through the properties of an object in JavaScript? You can use the for...in loop to iterate through an object's properties.
 
+// let person = { name: "John", age: 30, city: "New York" };
+// for (let key in person) {
+//   console.log(key + ": " + person[key]);
+// }
+
+//What is object destructuring in JavaScript, and how does it work? Object destructuring allows you to extract values from an object into variables.
 let person = { name: "John", age: 30, city: "New York" };
-for (let key in person) {
-  console.log(key + ": " + person[key]);
-}
+let { name, age, city } = person;
+console.log(name); // "John"
+console.log(age); // 30
+
 
 
   
