@@ -57,5 +57,16 @@ function Person(name, age) {
   let person2 = new Person("Bob", 30);
   
 
+// How do you check if a property exists in a JavaScript object? You can use the in operator or the hasOwnProperty() method.
   
+let person = { name: "John", age: 30 };
+
+// Using 'in' operator
+console.log("name" in person); // true
+console.log("gender" in person); // false
+
+// Using hasOwnProperty()
+console.log(person.hasOwnProperty("name")); // true
+console.log(person.hasOwnProperty("gender")); // false
+
   
