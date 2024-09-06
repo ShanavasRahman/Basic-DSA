@@ -59,14 +59,28 @@ function Person(name, age) {
 
 // How do you check if a property exists in a JavaScript object? You can use the in operator or the hasOwnProperty() method.
   
-let person = { name: "John", age: 30 };
+// let person = { name: "John", age: 30 };
 
-// Using 'in' operator
-console.log("name" in person); // true
-console.log("gender" in person); // false
+// // Using 'in' operator
+// console.log("name" in person); // true
+// console.log("gender" in person); // false
 
-// Using hasOwnProperty()
-console.log(person.hasOwnProperty("name")); // true
-console.log(person.hasOwnProperty("gender")); // false
+// // Using hasOwnProperty()
+// console.log(person.hasOwnProperty("name")); // true
+// console.log(person.hasOwnProperty("gender")); // false
+
+// What is the difference between Object.keys(), Object.values(), and Object.entries()?
+
+// Object.keys() returns an array of the object's keys.
+// Object.values() returns an array of the object's values.
+// Object.entries() returns an array of key-value pairs.
+
+
+let person = { name: "Alice", age: 25 };
+
+console.log(Object.keys(person)); // ["name", "age"]
+console.log(Object.values(person)); // ["Alice", 25]
+console.log(Object.entries(person)); // [["name", "Alice"], ["age", 25]]
+
 
   
