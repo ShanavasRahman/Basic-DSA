@@ -82,5 +82,16 @@ console.log(Object.keys(person)); // ["name", "age"]
 console.log(Object.values(person)); // ["Alice", 25]
 console.log(Object.entries(person)); // [["name", "Alice"], ["age", 25]]
 
+// How do you clone an object in JavaScript? You can clone an object using Object.assign() or the spread operator.
 
-  
+
+let original = { name: "John", age: 30 };
+
+// Using Object.assign()
+let clone1 = Object.assign({}, original);
+
+// Using spread operator
+let clone2 = { ...original };
+
+console.log(clone1); // { name: "John", age: 30 }
+console.log(clone2); // { name: "John", age: 30 }
