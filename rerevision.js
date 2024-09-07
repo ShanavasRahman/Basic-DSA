@@ -43,7 +43,6 @@ class LinkedList{
         let prev = null;
 
         while (current) {
-            prev = current;
             if (current.value == target) {
                 
             }
