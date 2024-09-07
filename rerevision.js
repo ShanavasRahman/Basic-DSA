@@ -37,9 +37,22 @@ class LinkedList {
     }
   }
 
-  deleteNode(target) {
-    let current = this.head;
-    let prev = null;
+    deleteNode(target) {
+      if (this.head.data == target) {
+          this.head = this.head.next;
+          return
+        } else {
+          let current = this.head;
+          let prev = null;
+          while (current) {
+              if (current.data == target) {
+                  prev.next = current.next;
+                  return;
+              }
+              prev = current;
+              current = current.next
+          }
+    }
 
    
   }
@@ -58,4 +71,5 @@ list.prepend(20);
 list.prepend(30);
 list.prepend(40);
 list.prepend(50);
+list.deleteNode(20);
 list.print();
