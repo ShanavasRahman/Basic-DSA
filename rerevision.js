@@ -41,10 +41,7 @@ class LinkedList {
     let current = this.head;
     let prev = null;
 
-    while (current) {
-      if (current.value == target) {
-      }
-    }
+   
   }
   print() {
     let current = this.head;
