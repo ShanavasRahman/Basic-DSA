@@ -197,33 +197,55 @@ class BST{
   }
 
   delete(target) {
-    return this.deleteNode(this.root,target)
+    return this.deleteNode(this.root, target);
   }
+
   deleteNode(node, target) {
     if (target < node.value) {
       node.left = this.deleteNode(node.left, target);
-      return node
-    } else if(target > node.value) {
+      return node;
+    } else if (target > node.value) {
       node.right = this.deleteNode(node.right, target);
-      return node
+      return node;
     } else {
-      //if target has a leaf node
-      if (node.left == null && node.right == null) {
+      //if the node has no child node
+      if (node.right == null && node.left == null) {
         node = null;
-        return node
+        return node;
       }
 
-      //if target have one leaf node
+      //if the node have one child
       if (node.left == null) {
-        node = node.right
+        node = node.right;
         return node;
-      } else if(node.right==null) {
+      } else if (node.right == null) {
         node = node.left;
         return node;
       }
 
-      //if target node have two children
-      
+      //if the node have two children
+      if (node.right != null && node.left != null) {
+        const minNode = this.findMinNode(node.right);
+        node.value = minNode.value;
+
+        //delete the duplicate of node.value
+
+        node.right = this.deleteNode(node.right, minNode.value);
+        return node;
+
+      }
+
+
+    }
+
+
+  }
+
+  findMinNode(node) {
+    if (node.left == null) {
+      return node;
+    } else {
+      return this.findMinNode(node.left);
     }
   }
 
@@ -245,4 +267,7 @@ bst.insert(9);
 bst.insert(15)
 bst.insert(5)
 bst.insert(30);
+bst.insert(25);
+bst.insert(50);
+bst.delete(20);
 bst.preOrder()
