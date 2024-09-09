@@ -47,24 +47,7 @@ insert(key) {
         this.heapifyDown(0);
         return root;
     }
-    heapifyDown(i) {
-        let smallest = i;
-        const left = this.leftChildIndex(i);
-        const right = this.rightChildIndex(i);
 
-        if (left < this.heap.length && this.heap[left] < this.heap[smallest]) {
-            smallest = left;
-        }
-
-        if (right < this.heap.length && this.heap[right] < this.heap[smallest]) {
-            smallest = right;
-        }
-
-        if (smallest !== i) {
-            this.swap(i, smallest);
-            this.heapifyDown(smallest);
-        }
-    }
     peek() {
         if (this.heap.length === 0) {
             return null;
