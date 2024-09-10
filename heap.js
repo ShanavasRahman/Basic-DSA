@@ -2,14 +2,13 @@ class Heap{
     constructor() {
         this.heap = [];
     }
-
     getParent(index) {
         return Math.floor((index - 1) / 2);
     }
-    getLeftChild(index) {
+    getLeft(index) {
         return 2 * index + 1;
     }
-    getRightChild(index) {
+    getRight(index) {
         return 2 * index + 2;
     }
     swap(index1, index2) {
@@ -19,17 +18,27 @@ class Heap{
 
     insert(value) {
         this.heap.push(value);
-        this.heapifyUp(this.heap.length - 1);
+        this.heapifyUp(this.heap.length-1)
     }
-
     heapifyUp(index) {
         let parentIndex = this.getParent(index);
-        // In a max-heap, we check if the current node is greater than the parent
         while (index > 0 && this.heap[index] > this.heap[parentIndex]) {
-            this.swap(index, parentIndex);  // Swap the current node with the parent
-            index = parentIndex;  // Move up to the parent's position
-            parentIndex = this.getParent(index);  // Get the parent's parent index
+            this.swap(index, parentIndex);
+            index = parentIndex;
+            parentIndex = this.getParent(index);
         }
     }
-    
+    print() {
+        console.log(this.heap);
+    }
 }
+
+
+const h = new Heap();
+h.insert(60);
+h.insert(65);
+h.insert(50);
+h.insert(40);
+h.insert(70);
+h.insert(35);
+h.print();
