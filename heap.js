@@ -11,9 +11,7 @@ class Heap{
     getRight(index) {
         return 2 * index + 2;
     }
-    swap(index1, index2) {
-        [this.heap[index1], this.heap[index2]] = [this.heap[index2], this.heap[index1]];
-    }
+
 
 
     insert(value) {
