@@ -88,11 +88,11 @@
 //     }
 // })
 
-// promise.then((res) => {
-//     console.log(res);
-// }).catch((error) => {
-//     console.log(error)
-// })
+promise.then((res) => {
+    console.log(res);
+}).catch((error) => {
+    console.log(error)
+})
 
 
 //Reverse an Array
