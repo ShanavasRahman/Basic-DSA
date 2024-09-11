@@ -104,9 +104,9 @@ promise.then((res) => {
 
 // Find the Maximum Value in an Array
 // Question: How do you find the maximum value in an array?
-// let arr = [10, 20, 30, 5, 40];
-// let maxVal = Math.max(...arr);
-// console.log(maxVal); // Output: 40
+let arrr = [10, 20, 30, 5, 40];
+let maxVal = Math.max(...arrr);
+console.log(maxVal); // Output: 40
 
 
 
