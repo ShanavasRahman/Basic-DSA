@@ -121,6 +121,12 @@ console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
 
 
 
+// Check if All Elements Meet a Condition
+// Question: How do you check if all elements in an array meet a specific condition?
+
+let array = [2, 4, 6, 8];
+let allEven = arr.every(num => num % 2 === 0);
+console.log(allEven); // Output: true
 
 
 
