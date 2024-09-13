@@ -126,7 +126,6 @@ console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
 
 let array = [2, 4, 6, 8];
 let allEven = arr.every(num => num % 2 === 0);
-console.log(allEven); // Output: true
 
 
 
