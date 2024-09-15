@@ -109,12 +109,5 @@ console.log(clone2); // { name: "John", age: 30 }
 // console.log(obj1.address.city); // "Los Angeles"
 
 
-let car = {
-  brand: "Toyota",
-  model: "Corolla",
-  start: function() {
-    console.log(this.brand + " " + this.model + " is starting.");
-  }
-};
 
 
