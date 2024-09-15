@@ -116,5 +116,5 @@ let car = {
     console.log(this.brand + " " + this.model + " is starting.");
   }
 };
-car.start(); // "Toyota Corolla is starting."
+
 
