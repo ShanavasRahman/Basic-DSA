@@ -46,27 +46,59 @@
 
 // Graph
 
-class Graph{
-    constructor() {
-        this.adjList={}
-    }
+// class Graph{
+//     constructor() {
+//         this.adjList={}
+//     }
 
-    addVertices(vertex) {
-        if (!this.adjList[vertex]) {
-            this.adjList[vertex] = [];
-        }
-    }
-    print() {
-        console.log(this.adjList);
-    }
-}
+//     addVertices(vertex) {
+//         if (!this.adjList[vertex]) {
+//             this.adjList[vertex] = [];
+//         }
+//     }
+//     addEdges(v1, v2) {
+//         if (this.adjList[v1] && this.adjList[v2]) {
+//             this.adjList[v1].push(v2);
+//             this.adjList[v2].push(v1);
+//         }
+//     }
+//     bfs(startingVertex) {
+//         let q = [startingVertex];
+//         let visited = {};
+//         visited[startingVertex] = true;
+//         while (q.length > 0) {
+//             let currentVertex = q.shift();
+//             console.log(currentVertex);
+//             if (this.adjList[currentVertex]) {
+//                 this.adjList[currentVertex].forEach(neighbour => {
+//                     if (!visited[neighbour]) {
+//                         q.push(neighbour);
+//                         visited[neighbour] = true;
+//                     }
+//                 });
+//             }
+//         }
+//     }
 
-const g = new Graph();
-g.addVertices("A")
-g.addVertices("B")
-g.addVertices("C")
-g.addVertices("D")
-g.print();
+// }
+
+// const g = new Graph();
+// g.addVertices("A")
+// g.addVertices("B")
+// g.addVertices("C")
+// g.addVertices("D")
+// g.addEdges("A", "B");
+// g.addEdges("B", "C");
+// g.addEdges("C", "D");
+// g.addEdges("D", "A");
+
+// g.bfs("A");
+
+
+//bst
+
+
+
 
 
 
