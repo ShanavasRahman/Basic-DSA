@@ -98,6 +98,111 @@
 //bst
 
 
+class TreeNode{
+    constructor(value) {
+        this.left = null;
+        this.value = value;
+        this.right = null;
+    }
+}
+
+class Bst{
+    constructor() {
+        this.root = null;
+    }
+    insert(value) {
+        let newNode = new TreeNode(value);
+        if (this.root == null) {
+            this.root = newNode;
+        } else {
+            return this.insertNode(this.root, newNode);
+        }
+    }
+    insertNode(node, newNode) {
+        if (newNode.value < node.value) {
+            if (node.left == null) {
+                node.left = newNode;
+            } else {
+                this.insertNode(node.left,newNode)
+            }
+        } else {
+            if (node.right == null) {
+                node.right = newNode;
+            } else {
+                this.insertNode(node.right,newNode)
+            }
+        }
+    }
+    inOrder(node = this.root) {
+        if (node != null) {
+            this.inOrder(node.left);
+            console.log(node.value);
+            this.inOrder(node.right);
+        }
+    }
+
+    delete(target) {
+        return this.deleteNode(this.root, target);
+    }
+
+    deleteNode(node, target) {
+        if (target < node.value) {
+            node.left = this.deleteNode(node.left, target);
+            return node;
+        } else if (target > node.value) {
+            node.right = this.deleteNode(node.right, target);
+            return node;
+        } else {
+            //target has no children
+            if (node.left == null && node.right == null) {
+                node = null;
+                return node;
+            }
+
+            //one child
+            if (node.left == null) {
+                node = node.right;
+                return node;
+            } else if (node.right == null) {
+                node = node.left;
+                return node;
+            }
+
+            //two children
+
+            if (node.right !== null && node.left !== null) {
+                let minNode = this.findMinNode(node.right);
+                node.value = minNode.value;
+
+                node.right = this.deleteNode(node.right, minNode);
+                return node;
+            }
+        }
+    }
+    findMinNode(node){
+        if (node.left == null) {
+            return node;
+        } else {
+            return this.findMinNode(node.left);
+        }
+    }
+}
+
+
+const bst = new Bst();
+bst.insert(10)
+bst.insert(8)
+bst.insert(20)
+bst.insert(6)
+bst.insert(9);
+bst.insert(15)
+bst.insert(5)
+bst.insert(30);
+bst.delete(8);
+
+bst.inOrder();
+
+
 
 
 
