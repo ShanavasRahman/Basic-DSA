@@ -107,4 +107,4 @@ function polynomialHash(str, base = 31, tableSize = 10) {
     return hashValue;
 }
 
-console.log(polynomialHash("example")); // Output: a hash index
+console.log(polynomialHash("example"));
