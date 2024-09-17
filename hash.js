@@ -86,3 +86,14 @@ function digitExtractionHash(key) {
 }
 
 console.log(digitExtractionHash(51234)); // Output: '54' -> index '4'
+
+
+// Random Hashing
+
+function randomHash(key) {
+    let randomFactor = Math.random() * 100; // Generate a random factor
+    return Math.floor((key + randomFactor) % 10); // Table size 10
+}
+
+console.log(randomHash(123)); // Output: Random index each time
+
