@@ -64,3 +64,14 @@ function foldingHash(key) {
 }
 
 console.log(foldingHash(123456)); // Output: a hash index, e.g., '8'
+
+
+// Mid-Square Hashing
+
+function midSquareHash(key) {
+    let square = key * key;
+    let mid = Math.floor(square / 100) % 100; // Extract the middle two digits
+    return mid % 10; // Return as index for table size 10
+}
+
+console.log(midSquareHash(45)); // Output: a hash index, e.g., '2'
