@@ -29,3 +29,21 @@ function modHashRetrieve(key) {
 
 modHashStore(123, 'John');
 console.log(modHashRetrieve(123)); // Output: 'John'
+
+
+//Multiplicative Hashing
+let multTable = new Array(10);
+const A = 0.6180339887; // A constant used for hashing (close to the golden ratio)
+
+function multHashStore(key, value) {
+    let index = Math.floor((key * A % 1) * multTable.length);
+    multTable[index] = value;
+}
+
+function multHashRetrieve(key) {
+    let index = Math.floor((key * A % 1) * multTable.length);
+    return multTable[index] ? multTable[index] : "Value not found";
+}
+
+multHashStore(123, 'Michael');
+console.log(multHashRetrieve(123)); // Output: 'Michael'
