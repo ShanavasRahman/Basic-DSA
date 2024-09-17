@@ -97,3 +97,14 @@ function randomHash(key) {
 
 console.log(randomHash(123)); // Output: Random index each time
 
+//Polynomial Hashing
+
+function polynomialHash(str, base = 31, tableSize = 10) {
+    let hashValue = 0;
+    for (let i = 0; i < str.length; i++) {
+        hashValue = (hashValue * base + str.charCodeAt(i)) % tableSize;
+    }
+    return hashValue;
+}
+
+console.log(polynomialHash("example")); // Output: a hash index
