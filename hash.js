@@ -75,3 +75,14 @@ function midSquareHash(key) {
 }
 
 console.log(midSquareHash(45)); // Output: a hash index, e.g., '2'
+
+
+//Digit Extraction Hashing
+
+function digitExtractionHash(key) {
+    let strKey = key.toString();
+    let extractedDigits = strKey[0] + strKey[strKey.length - 1]; // Extract first and last digits
+    return parseInt(extractedDigits) % 10; // Return hash index
+}
+
+console.log(digitExtractionHash(51234)); // Output: '54' -> index '4'
