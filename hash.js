@@ -47,3 +47,20 @@ function multHashRetrieve(key) {
 
 multHashStore(123, 'Michael');
 console.log(multHashRetrieve(123)); // Output: 'Michael'
+
+
+// Folding Hashing
+
+function foldingHash(key) {
+    let strKey = key.toString();
+    let sum = 0;
+
+    // Split key into parts and sum
+    for (let i = 0; i < strKey.length; i += 2) {
+        sum += parseInt(strKey.substr(i, 2), 10);
+    }
+
+    return sum % 10; // Table size of 10
+}
+
+console.log(foldingHash(123456)); // Output: a hash index, e.g., '8'
