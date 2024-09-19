@@ -214,6 +214,22 @@ class LinkedList{
     this.head = prev;
   }
 
+  sort() {
+    let current = this.head;
+    while (current) {
+      let forward = current.next;
+      while (forward) {
+        if (current.data > forward.data) {
+          let temp = forward.data;
+          forward.data = current.data;
+          current.data = temp;
+        }
+        forward = forward.next;
+      }
+      current=current.next
+    }
+  }
+
   delete(target) {
     let current = this.head;
     let prev = null;
@@ -243,11 +259,12 @@ class LinkedList{
 
 
 const list = new LinkedList();
+list.prepend(30);
+list.prepend(50);
 list.prepend(10);
 list.prepend(20);
-list.prepend(30);
 list.prepend(40);
-list.prepend(50);
-list.reverse();
-list.delete(50);
+// list.reverse();
+// list.delete(50);
+list.sort()
 list.print();
