@@ -251,7 +251,7 @@ class LinkedList{
     let current = this.head;
     while (current) {
       console.log(current.data);
-      current = current.next;
+      current = current.next
     }
   }
 }
@@ -264,7 +264,7 @@ list.prepend(50);
 list.prepend(10);
 list.prepend(20);
 list.prepend(40);
-// list.reverse();
+list.reverse();
 list.delete(50);
 list.sort()
 list.print();
