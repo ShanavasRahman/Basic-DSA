@@ -43,3 +43,5 @@ for (let i = 0; i < arr.length; i++){
     [arr[i],arr[min]] = [arr[min], arr[i]];
 }
 console.log(arr);
+
+//first finding the index of min from the i'th position
