@@ -386,15 +386,39 @@
 
 //bubble sort
 
+// let arr = [5, 6, 3, 8, 2];
+// for (i = 0; i < arr.length; i++){
+//     for (j = 0; j < arr.length - i; j++){
+//         if (arr[j] > arr[j + 1]) {
+//             [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//         }
+//     }
+// }
+// console.log(arr);
+
+//quick sort
 let arr = [5, 6, 3, 8, 2];
-for (i = 0; i < arr.length; i++){
-    for (j = 0; j < arr.length - i; j++){
-        if (arr[j] > arr[j + 1]) {
-            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+
+function quick(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+    let pivot = arr[0];
+    let left = [];
+    let right = [];
+    for (let i = 1; i < arr.length; i++){
+        if (arr[i] < pivot) {
+            left.push(arr[i])
+        } else {
+            right.push(arr[i]);
         }
     }
+
+    return [...quick(left),pivot,...quick(right)];
+    
 }
-console.log(arr);
+
+console.log(quick(arr));
 
 
 
