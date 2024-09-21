@@ -356,16 +356,33 @@
 
 //*********************Selection sort
 
+// let arr = [5, 6, 3, 8, 2];
+// for (let i = 0; i < arr.length; i++){
+//     let min = i;
+//     for (let j = i+1; j < arr.length; j++){
+//         if (arr[j] < arr[min]) {
+//             min=j
+//         }
+//     }
+//     [arr[i], arr[min]] = [arr[min], arr[i]];
+// }
+// console.log(arr);
+
+
+//insertion sort
+
 let arr = [5, 6, 3, 8, 2];
-for (let i = 0; i < arr.length; i++){
-    let min = i;
-    for (let j = i+1; j < arr.length; j++){
-        if (arr[j] < arr[min]) {
-            min=j
-        }
+for (let i = 1; i < arr.length; i++){
+    let temp = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > temp) {
+        arr[j + 1] = arr[j];
+        j--;
     }
-    [arr[i], arr[min]] = [arr[min], arr[i]];
+    arr[j + 1] = temp;
 }
 console.log(arr);
+
+
 
 
