@@ -303,54 +303,69 @@
 
 //*************************************Trie
 
-class TrieNode{
-    constructor() {
-        this.children = {};
-        this.isEndOfWord = false;
-    }
-}
+// class TrieNode{
+//     constructor() {
+//         this.children = {};
+//         this.isEndOfWord = false;
+//     }
+// }
 
-class Trie{
-    constructor() {
-        this.root = new TrieNode();
-    }
+// class Trie{
+//     constructor() {
+//         this.root = new TrieNode();
+//     }
 
-    insert(word) {
-        let node = this.root;
-        for (let char of word) {
-            if (!node.children[char]) {
-                node.children[char] = new TrieNode();
-            }
-            node = node.children[char];
+//     insert(word) {
+//         let node = this.root;
+//         for (let char of word) {
+//             if (!node.children[char]) {
+//                 node.children[char] = new TrieNode();
+//             }
+//             node = node.children[char];
+//         }
+//         node.isEndOfWord = true;
+//     }
+
+//     wordSearch(prefix) {
+//         let node = this.root
+//         for (let char of prefix) {
+//             if (!node.children[char]) {
+//                 return false
+//             }
+//             node = node.children[char];
+//         }
+//         return true;
+//     }
+// }
+
+
+
+
+// const t = new Trie();
+
+// t.insert("apple");
+// t.insert("bat");
+// t.insert("bike");
+// t.insert("aeroplane");
+// t.insert("cat");
+// t.insert("car");
+// t.insert("dog");
+
+// console.log(t.wordSearch("apple"));
+
+
+//*********************Selection sort
+
+let arr = [5, 6, 3, 8, 2];
+for (let i = 0; i < arr.length; i++){
+    let min = i;
+    for (let j = i+1; j < arr.length; j++){
+        if (arr[j] < arr[min]) {
+            min=j
         }
-        node.isEndOfWord = true;
     }
-
-    wordSearch(prefix) {
-        let node = this.root
-        for (let char of prefix) {
-            if (!node.children[char]) {
-                return false
-            }
-            node = node.children[char];
-        }
-        return true;
-    }
+    [arr[i], arr[min]] = [arr[min], arr[i]];
 }
-
-
-
-
-const t = new Trie();
-
-t.insert("apple");
-t.insert("bat");
-t.insert("bike");
-t.insert("aeroplane");
-t.insert("cat");
-t.insert("car");
-t.insert("dog");
-
-console.log(t.wordSearch("apple"));
+console.log(arr);
 
 
