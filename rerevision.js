@@ -364,6 +364,7 @@ function quickSort(arr) {
 
     return [...quickSort(left), pivot, ...quickSort(right)];
 }
+console.log(quickSort(arr));
 
 
 
