@@ -1,53 +1,53 @@
 // Linked List
 
-class Node{
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
-}
-class LinkedList{
-    constructor() {
-        this.head = null;
-        this.tail = null;
-    }
+// class Node{
+//     constructor(value) {
+//         this.value = value;
+//         this.next = null;
+//     }
+// }
+// class LinkedList{
+//     constructor() {
+//         this.head = null;
+//         this.tail = null;
+//     }
 
-    prepend(value) {
-        let newNode = new Node(value)
-        newNode.next = this.head;
-        this.head = newNode;
-    }
+//     prepend(value) {
+//         let newNode = new Node(value)
+//         newNode.next = this.head;
+//         this.head = newNode;
+//     }
 
-    append(value) {
-        const newNode = new Node(value);
-        if (this.head == null) {
-            this.head = newNode;
-        } else {
-            let current = this.head;
-            while (current.next) {
-                current = current.next;
-            }
-            current.next = newNode;
-        }
-    }
+//     append(value) {
+//         const newNode = new Node(value);
+//         if (this.head == null) {
+//             this.head = newNode;
+//         } else {
+//             let current = this.head;
+//             while (current.next) {
+//                 current = current.next;
+//             }
+//             current.next = newNode;
+//         }
+//     }
 
-    print() {
-        let current = this.head;
-        while (current) {
-            console.log(current.value)
-            current = current.next;
-        }
-    }
-}
+//     print() {
+//         let current = this.head;
+//         while (current) {
+//             console.log(current.value)
+//             current = current.next;
+//         }
+//     }
+// }
 
 
-const list = new LinkedList();
-list.prepend(10);
-list.prepend(20);
-list.prepend(30);
-list.prepend(40);
-list.prepend(50);
-list.print()
+// const list = new LinkedList();
+// list.prepend(10);
+// list.prepend(20);
+// list.prepend(30);
+// list.prepend(40);
+// list.prepend(50);
+// list.print()
 
 
 // Graph
@@ -294,7 +294,21 @@ list.print()
 // h.insert(40);
 // h.insert(70);
 // h.insert(35);
-// h.print(); 
+// h.print();
+
+
+//bubble sort
+
+let arr = [3, 2, 5, 6, 1, 4];
+
+for (let i = 0; i < arr.length; i++){
+    for (let j = 0; j < arr.length - i; j++){
+        if (arr[j + 1] < arr[j]) {
+            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+    }
+}
+console.log(arr);
 
 
 
