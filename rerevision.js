@@ -327,19 +327,44 @@
 
 
 //selection sort
+// let arr = [3, 2, 5, 6, 1, 4];
+
+// for (let i = 0; i < arr.length; i++){
+//     let min = i;
+//     for (let j = i+1; j < arr.length; j++){
+//         if (arr[j] < arr[min]) {
+//             min = j;
+//         }
+//     }
+//     [arr[i], arr[min]] = [arr[min], arr[i]];
+// }
+// console.log(arr);
+
+
+//quick sort
+
 let arr = [3, 2, 5, 6, 1, 4];
 
-for (let i = 0; i < arr.length; i++){
-    let min = i;
-    for (let j = i+1; j < arr.length; j++){
-        if (arr[j] < arr[min]) {
-            min = j;
+function quickSort(arr) {
+    if (!arr.length >= 1) {
+        return arr;
+    }
+
+    let pivot = arr[0];
+    let left = [];
+    let right = [];
+
+    for (let i = 1; i < arr.length; i++){
+        if (arr[i] < pivot) {
+            left.push(arr[i]);
+        } else {
+            right.push(arr[i]);
         }
     }
-    [arr[i], arr[min]] = [arr[min], arr[i]];
-}
-console.log(arr);
 
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+console.log(quickSort(arr));
 
 
 
