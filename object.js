@@ -78,7 +78,7 @@ function Person(name, age) {
 
 let person = { name: "Alice", age: 25 };
 
-console.log(Object.keys(person)); // ["name", "age"]
+console.log(Object.keys(person)); 
 console.log(Object.values(person)); // ["Alice", 25]
 console.log(Object.entries(person)); // [["name", "Alice"], ["age", 25]]
 
