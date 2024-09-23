@@ -106,7 +106,7 @@ console.log(clone2); // { name: "John", age: 30 }
 let obj1 = { name: "John", address: { city: "New York" } };
 let shallowCopy = { ...obj1 };
 shallowCopy.address.city = "Los Angeles";
-console.log(obj1.address.city); // "Los Angeles"
+console.log(obj1.address.city); 
 
 
 
