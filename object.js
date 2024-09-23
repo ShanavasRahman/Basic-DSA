@@ -103,10 +103,10 @@ console.log(clone2); // { name: "John", age: 30 }
 // A shallow copy copies only the immediate properties of the object, meaning nested objects or arrays are still referenced by both copies.
 // A deep copy duplicates all levels of the object, so changes to nested objects in the copy don't affect the original.
 
-// let obj1 = { name: "John", address: { city: "New York" } };
-// let shallowCopy = { ...obj1 };
-// shallowCopy.address.city = "Los Angeles";
-// console.log(obj1.address.city); // "Los Angeles"
+let obj1 = { name: "John", address: { city: "New York" } };
+let shallowCopy = { ...obj1 };
+shallowCopy.address.city = "Los Angeles";
+console.log(obj1.address.city); // "Los Angeles"
 
 
 
