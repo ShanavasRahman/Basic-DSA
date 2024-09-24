@@ -98,7 +98,6 @@ console.log(clone2); // { name: "John", age: 30 }
 
 
 
-// What is the difference between shallow copy and deep copy of an object in JavaScript?
 
 // A shallow copy copies only the immediate properties of the object, meaning nested objects or arrays are still referenced by both copies.
 // A deep copy duplicates all levels of the object, so changes to nested objects in the copy don't affect the original.
