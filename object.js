@@ -93,8 +93,7 @@ let clone1 = Object.assign({}, original);
 // Using spread operator
 let clone2 = { ...original };
 
-console.log(clone1); // { name: "John", age: 30 }
-console.log(clone2); // { name: "John", age: 30 }
+
 
 
 
