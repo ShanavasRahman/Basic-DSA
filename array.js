@@ -90,40 +90,25 @@
 
 
 
-//Reverse an Array
-//Question: How do you reverse the elements of an array in JavaScript?
-
-// let arr = [1, 2, 3, 4, 5];
-// let reversedArr = arr.reverse();
-// console.log(reversedArr);
-
-// Find the Maximum Value in an Array
-// Question: How do you find the maximum value in an array?
-let arrr = [10, 20, 30, 5, 40];
-let maxVal = Math.max(...arrr);
-console.log(maxVal); // Output: 40
+//Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 
-
-
-// Remove Duplicates from an Array
-// Question: How can you remove duplicate elements from an array?
-
-let arr = [1, 2, 2, 3, 4, 4, 5];
-let uniqueArr = [...new Set(arr)];
-console.log(uniqueArr); // Output: [1, 2, 3, 4, 5]
-
-
-
-
-// Check if All Elements Meet a Condition
-// Question: How do you check if all elements in an array meet a specific condition?
-
-let array = [2, 4, 6, 8];
-let allEven = arr.every(num => num % 2 === 0);
-console.log(allEven); // Output: true
-
-
-
-
+const nestedObj = {
+    a: 1,
+    b: {
+        c: 2,
+        d: {
+            e: 3,
+            f: 4
+        }
+    },
+    g: 5
+};
+function flattingObj(obj) {
+    for (let key in obj) {
+        if (obj[key] == "object" && obj[key] != null) {
+            console.log(    )
+        }
+    }
+}
 

@@ -52,53 +52,37 @@
 
 // Graph
 
-// class Graph{
-//     constructor() {
-//         this.adjList={}
-//     }
+class Graph{
+    constructor() {
+        this.adjList = {};
+    }
 
-//     addVertices(vertex) {
-//         if (!this.adjList[vertex]) {
-//             this.adjList[vertex] = [];
-//         }
-//     }
-//     addEdges(v1, v2) {
-//         if (this.adjList[v1] && this.adjList[v2]) {
-//             this.adjList[v1].push(v2);
-//             this.adjList[v2].push(v1);
-//         }
-//     }
-//     bfs(startingVertex) {
-//         let q = [startingVertex];
-//         let visited = {};
-//         visited[startingVertex] = true;
-//         while (q.length > 0) {
-//             let currentVertex = q.shift();
-//             console.log(currentVertex);
-//             if (this.adjList[currentVertex]) {
-//                 this.adjList[currentVertex].forEach(neighbour => {
-//                     if (!visited[neighbour]) {
-//                         q.push(neighbour);
-//                         visited[neighbour] = true;
-//                     }
-//                 });
-//             }
-//         }
-//     }
+    addVertices(vertex) {
+        if (!this.adjList[vertex]) {
+            this.adjList[vertex] = [];
+        }
+    }
+    addEdges(vertex1, vertex2) {
+        if (this.adjList[vertex1] && this.adjList[vertex2]) {
+            this.adjList[vertex1].push(vertex2);
+            this.adjList[vertex2].push(vertex2);
+        }
+    }
+    
+}
 
-// }
 
-// const g = new Graph();
-// g.addVertices("A")
-// g.addVertices("B")
-// g.addVertices("C")
-// g.addVertices("D")
-// g.addEdges("A", "B");
-// g.addEdges("B", "C");
-// g.addEdges("C", "D");
-// g.addEdges("D", "A");
+const g = new Graph();
+g.addVertices("A")
+g.addVertices("B")
+g.addVertices("C")
+g.addVertices("D")
+g.addEdges("A", "B");
+g.addEdges("B", "C");
+g.addEdges("C", "D");
+g.addEdges("D", "A");
 
-// g.bfs("A");
+g.bfs("A");
 
 
 //bst
@@ -343,28 +327,28 @@
 
 //quick sort
 
-let arr = [3, 2, 5, 6, 1, 4];
+// let arr = [3, 2, 5, 6, 1, 4];
 
-function quickSort(arr) {
-    if (!arr.length >= 1) {
-        return arr;
-    }
+// function quickSort(arr) {
+//     if (!arr.length >= 1) {
+//         return arr;
+//     }
 
-    let pivot = arr[0];
-    let left = [];
-    let right = [];
+//     let pivot = arr[0];
+//     let left = [];
+//     let right = [];
 
-    for (let i = 1; i < arr.length; i++){
-        if (arr[i] < pivot) {
-            left.push(arr[i]);
-        } else {
-            right.push(arr[i]);
-        }
-    }
+//     for (let i = 1; i < arr.length; i++){
+//         if (arr[i] < pivot) {
+//             left.push(arr[i]);
+//         } else {
+//             right.push(arr[i]);
+//         }
+//     }
 
-    return [...quickSort(left), pivot, ...quickSort(right)];
-}
-console.log(quickSort(arr));
+//     return [...quickSort(left), pivot, ...quickSort(right)];
+// }
+// console.log(quickSort(arr));
 
 
 
