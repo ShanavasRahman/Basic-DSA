@@ -107,7 +107,7 @@ const nestedObj = {
 function flattingObj(obj) {
     for (let key in obj) {
         if (obj[key] == "object" && obj[key] != null) {
-            console.log(    )
+           
         }
     }
 }
