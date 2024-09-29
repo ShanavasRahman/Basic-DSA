@@ -93,22 +93,37 @@
 //Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 
-const nestedObj = {
-    a: 1,
-    b: {
-        c: 2,
-        d: {
-            e: 3,
-            f: 4
-        }
-    },
-    g: 5
-};
-function flattingObj(obj) {
-    for (let key in obj) {
-        if (obj[key] == "object" && obj[key] != null) {
+// const nestedObj = {
+//     a: 1,
+//     b: {
+//         c: 2,
+//         d: {
+//             e: 3,
+//             f: 4
+//         }
+//     },
+//     g: 5
+// };
+// function flattingObj(obj) {
+//     for (let key in obj) {
+//         if (obj[key] == "object" && obj[key] != null) {
            
+//         }
+//     }
+// }
+
+
+let arr = [3, 4, 5, 6, 3, 9, 5];
+let newArr=[]
+for (let i = 0; i < arr.length; i++){
+    if (arr[i] % 2 != 0) {
+        for (let j = i + 1; j < arr.length; j++){
+            if (arr[i] == arr[j]) {
+                newArr.push(arr[i]);
+            }
         }
     }
 }
+
+console.log(newArr);
 
