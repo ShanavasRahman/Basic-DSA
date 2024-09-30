@@ -79,7 +79,52 @@
 
 
 
+//Trie
 
+class TrieNode{
+    constructor() {
+        this.children = {};
+        this.isEndOfWord = false;
+    }
+}
+
+class Trie{
+    constructor() {
+        this.root = new TrieNode();
+    }
+
+    insert(word) {
+        let node = this.root;
+        for (let char of word) {
+            if (!node.children[char]) {
+                node.children[char] = new TrieNode();
+            }
+            node = node.children[char];
+        }
+        node.isEndOfWord = true;
+    }
+    searchWord(prefix) {
+        let node = this.root;
+        for (let char of prefix) {
+            if (!node.children[char]) {
+                return false
+            }
+            node = node.children[char];
+        }
+        return true;
+    }
+}
+
+const t = new Trie();
+
+t.insert("apple");
+t.insert("bat");
+t.insert("bike");
+t.insert("aeroplane");
+t.insert("cat");
+t.insert("car");
+t.insert("dog");
+console.log(t.searchWord("appl"));
 
 
 
