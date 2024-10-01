@@ -241,8 +241,70 @@
 // bst.inOrder();
 
 
+//selection sort
 
+let arr = [2, 4, 7, 1, 3, 8];
 
+function selectionSort(arr) {
+    for (let i = 0; i < arr.length; i++){
+        let min = i;
+        for (let j = i + 1; j < arr.length; j++){
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+        [arr[i], arr[min]] = [arr[min], arr[i]];
+    }
+}
+selectionSort(arr);
+console.log(arr);
+
+//insertion sort
+
+let a = [4, 2, 7, 5, 9, 1];
+
+for (let i = 1; i < a.length; i++){
+    let temp = a[i];
+    let j = i - 1;
+    while (j >= 0 && a[j] > temp) {
+        a[j + 1] = a[j];
+        j--;
+    }
+    a[j + 1] = temp;
+}
+console.log(a);
+
+//bubble sort
+
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++){
+        if (arr[j] > arr[j + 1]) {
+            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+    }
+}
+console.log(arr);
+
+//Quick sort
+
+function quickSort(a) {
+    if (a.length <= 1) {
+        return a;
+    }
+    let pivot = a[0];
+    let left = [];
+    let right = [];
+    for (let i = 1; i < a.length; i++){
+        if (a[i] < pivot) {
+            left.push(a[i]);
+        } else {
+            right.push(a[i]);
+        }
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+quickSort(a);
+console.log(a);
 
 
 
