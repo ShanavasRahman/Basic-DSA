@@ -81,50 +81,166 @@
 
 //Trie
 
-class TrieNode{
-    constructor() {
-        this.children = {};
-        this.isEndOfWord = false;
-    }
-}
+// class TrieNode{
+//     constructor() {
+//         this.children = {};
+//         this.isEndOfWord = false;
+//     }
+// }
 
-class Trie{
-    constructor() {
-        this.root = new TrieNode();
-    }
+// class Trie{
+//     constructor() {
+//         this.root = new TrieNode();
+//     }
 
-    insert(word) {
-        let node = this.root;
-        for (let char of word) {
-            if (!node.children[char]) {
-                node.children[char] = new TrieNode();
-            }
-            node = node.children[char];
-        }
-        node.isEndOfWord = true;
-    }
-    searchWord(prefix) {
-        let node = this.root;
-        for (let char of prefix) {
-            if (!node.children[char]) {
-                return false
-            }
-            node = node.children[char];
-        }
-        return true;
-    }
-}
+//     insert(word) {
+//         let node = this.root;
+//         for (let char of word) {
+//             if (!node.children[char]) {
+//                 node.children[char] = new TrieNode();
+//             }
+//             node = node.children[char];
+//         }
+//         node.isEndOfWord = true;
+//     }
+//     searchWord(prefix) {
+//         let node = this.root;
+//         for (let char of prefix) {
+//             if (!node.children[char]) {
+//                 return false
+//             }
+//             node = node.children[char];
+//         }
+//         return true;
+//     }
+// }
 
-const t = new Trie();
+// const t = new Trie();
 
-t.insert("apple");
-t.insert("bat");
-t.insert("bike");
-t.insert("aeroplane");
-t.insert("cat");
-t.insert("car");
-t.insert("dog");
-console.log(t.searchWord("appl"));
+// t.insert("apple");
+// t.insert("bat");
+// t.insert("bike");
+// t.insert("aeroplane");
+// t.insert("cat");
+// t.insert("car");
+// t.insert("dog");
+// console.log(t.searchWord("appl"));
+
+
+//Bst
+
+// class TrieNode{
+//     constructor(value) {
+//         this.left = null;
+//         this.value = value;
+//         this.right = null;
+//     }
+// }
+
+// class Bst{
+//     constructor() {
+//         this.root = null;
+//     }
+
+
+//     insert(value) {
+//         let newNode = new TrieNode(value);
+//         if (this.root == null) {
+//             this.root = newNode;
+//         } else {
+//             this.insertNode(this.root, newNode);
+//         }
+//     }
+//     insertNode(node, newNode) {
+//         if (newNode.value < node.value) {
+//             if (node.left == null) {
+//                 node.left = newNode;
+//             } else {
+//                 return this.insertNode(node.left, newNode);
+//             }
+//         } else {
+//             if (node.right == null) {
+//                 node.right = newNode;
+//             } else {
+//                 return this.insertNode(node.right,newNode)
+//             }
+//         }
+//     }
+//     delete(target) {
+//         return this.deleteNode(this.root, target);
+//     }
+
+//     deleteNode(node, target) {
+//         if (target < node.value) {
+//             node.left = this.deleteNode(node.left, target);
+//             return node;
+//         } else if (target > node.value) {
+//             node.right = this.deleteNode(node.right, target);
+//             return node;
+//         } else {
+//             //Node have no children
+//             if (node.left == null && node.right == null) {
+//                 node = null;
+//                 return node;
+//             }
+
+//             //node have one child;
+
+//             if (node.left == null) {
+//                 node = node.right;
+//                 return node;
+//             } else if (node.right == null) {
+//                 node = node.left;
+//                 return node;
+//             }
+
+//             //node have two children
+
+//             if (node.right != null && node.left != null) {
+//                 let minNode = this.findMinNode(node.right);
+//                 node.value = minNode.value;
+
+//                 node.right = this.deleteNode(node.right, minNode.value);
+//                 return node;
+
+//             }
+//         }
+
+//     }
+//     findMinNode(node){
+//         if (node.left == null) {
+//             return node;
+//         } else {
+//            return this.findMinNode(node.left);
+//         }
+//     }
+    
+    
+
+
+//     inOrder(node = this.root) {
+//         if (node != null) {
+//             this.inOrder(node.left);
+//             this.inOrder(node.right);
+//             console.log(node.value)
+//         }
+//     }
+// }
+
+// const bst = new Bst();
+// bst.insert(10)
+// bst.insert(8)
+// bst.insert(20)
+// bst.insert(6)
+// bst.insert(9);
+// bst.insert(15)
+// bst.insert(5)
+// bst.insert(30);
+// bst.delete(8);
+
+// bst.inOrder();
+
+
 
 
 
