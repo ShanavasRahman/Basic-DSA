@@ -33,5 +33,11 @@
 // console.log(obj3);
 
 
+const user = { name: "John", age: 25 };
+let { name, age } = user;
+console.log(name);
+console.log(age);
+
+
 
 
