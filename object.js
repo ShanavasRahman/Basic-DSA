@@ -24,4 +24,14 @@
 // console.log(result);
 
 
+// let obj1 = { name: "Alice", age: 30 };
+// let obj2 = { age: 25, city: "New York" };
+
+// let obj3 = { ...obj1, ...obj2 };
+// Object.
+
+// console.log(obj3);
+
+
+
 
