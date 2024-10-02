@@ -1,111 +1,27 @@
-// //How do you create an object in JavaScript?
+// let car = {
+//   brand: "Toyota",
+//   model: "Corolla",
+//   year: 2020,
+// };
 
-// let person = {
-//     name: "John",
-//     age: 30,
-//     city: "New York"
-//   };
-  
+// let user = { name: "John", age: 25, city: "Newyork" };
+// let entries = Object.entries(user)
+// entries=entries.reverse()
+// let reversedObj = Object.fromEntries(entries);
+// console.log(user)
+// console.log(reversedObj);
 
-//   What is the this keyword in JavaScript objects, and how is it used? this refers to the object that is executing the current function.
+// let obj = { name: 'hisham', email: 'hisham@gmail.com' }
 
-// let person = {
-//     name: "John",
-//     greet: function() {
-//       console.log("Hello, " + this.name);
-//     }
-//   };
-//   person.greet(); // "Hello, John"
-
-//What is the purpose of getters and setters in a JavaScript object? Getters and setters allow you to define methods that control access to an object's properties.
-
-// let person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     get fullName() {
-//       return this.firstName + " " + this.lastName;
-//     },
-//     set fullName(name) {
-//       let parts = name.split(" ");
-//       this.firstName = parts[0];
-//       this.lastName = parts[1];
-//     }
-//   };
-//   console.log(person.fullName); // "John Doe"
-//   person.fullName = "Jane Smith";
-//   console.log(person.firstName); // "Jane"
-
-//How can you loop through the properties of an object in JavaScript? You can use the for...in loop to iterate through an object's properties.
-
-// let person = { name: "John", age: 30, city: "New York" };
-// for (let key in person) {
-//   console.log(key + ": " + person[key]);
+// function stringify(obj) {
+//   let arr1 = [];
+//   for (let key in obj) {
+//     arr1.push(`${key}=${obj[key]}`);
+//   }
+//   return arr1.join('&');
 // }
-
-//What is object destructuring in JavaScript, and how does it work? Object destructuring allows you to extract values from an object into variables.
-// let person = { name: "John", age: 30, city: "New York" };
-// let { name, age, city } = person;
-// console.log(name); // "John"
-// console.log(age); // 30
-
-//How do you create an object constructor function in JavaScript? You can create a constructor function to define objects of a similar type.
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-
-  
-
-// How do you check if a property exists in a JavaScript object? You can use the in operator or the hasOwnProperty() method.
-  
-// let person = { name: "John", age: 30 };
-
-// // Using 'in' operator
-// console.log("name" in person); // true
-// console.log("gender" in person); // false
-
-// // Using hasOwnProperty()
-// console.log(person.hasOwnProperty("name")); // true
-// console.log(person.hasOwnProperty("gender")); // false
-
-// What is the difference between Object.keys(), Object.values(), and Object.entries()?
-
-// Object.keys() returns an array of the object's keys.
-// Object.values() returns an array of the object's values.
-// Object.entries() returns an array of key-value pairs.
-
-
-let person = { name: "Alice", age: 25 };
-
-console.log(Object.keys(person)); 
-console.log(Object.values(person)); 
-console.log(Object.entries(person)); 
-
-// How do you clone an object in JavaScript? You can clone an object using Object.assign() or the spread operator.
-
-
-let original = { name: "John", age: 30 };
-
-// Using Object.assign()
-let clone1 = Object.assign({}, original);
-
-// Using spread operator
-let clone2 = { ...original };
-
-
-
-
-
-// What is the difference between shallow copy and deep copy of an object in JavaScript?
-
-// A shallow copy copies only the immediate properties of the object, meaning nested objects or arrays are still referenced by both copies.
-// A deep copy duplicates all levels of the object, so changes to nested objects in the copy don't affect the original.
-
-let obj1 = { name: "John", address: { city: "New York" } };
-let shallowCopy = { ...obj1 };
-shallowCopy.address.city = "Los Angeles";
-console.log(obj1.address.city); 
-
+// let result=stringify(obj);
+// console.log(result);
 
 
 

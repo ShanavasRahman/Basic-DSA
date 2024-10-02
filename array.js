@@ -157,15 +157,49 @@
 // }
 // console.log(result);
 
-let arr = [5, 20, 2, 6];
-let first = 0;
-let second = 0;
-for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > first) {
-    second = first;
-    first = arr[i];
-  } else if (arr[i] < first && arr[i] > second) {
-    second = arr[i];
-  }
-};
-console.log(second);
+//Second largest
+
+// let arr = [5, 20, 2, 6];
+// let first = 0;
+// let second = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > first) {
+//     second = first;
+//     first = arr[i];
+//   } else if (arr[i] < first && arr[i] > second) {
+//     second = arr[i];
+//   }
+// };
+// console.log(second);
+
+// Problem: Given an array, rotate the array to the right by k steps.
+// Example:
+// Input: [1, 2, 3, 4, 5, 6, 7], k = 3
+// Output: [5, 6, 7, 1, 2, 3, 4]
+
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+// let k = 6;
+
+
+// let nums=arr.splice(arr.length - k, k);
+// arr.splice(0, 0, ...nums);
+// console.log(arr);
+
+// Input: Array1: [1, 2, 3, 4, 5], Array2: [2, 4, 5]
+let arr = [1, 2, 3, 4, 5];
+let arr1 = [2, 4, 5,8];
+
+function finding(arr, arr1) {
+    let result = arr.every((element) => arr.includes(element));
+    let anotherResult = arr1.every((element) => arr.includes(element));
+
+    if (result || anotherResult) {
+        return true;
+    }
+    return false
+}
+
+let result = finding(arr, arr1);
+console.log(result);
+
+
