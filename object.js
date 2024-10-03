@@ -86,8 +86,6 @@ console.log(result);
 
 
 
-let result1 = flat(obj);
-console.log(result1);
 
 
 
