@@ -80,8 +80,8 @@ function flatting(obj, parentKey, result) {
     return result;
 }
   
-// let result = flatting(obj);
-// console.log(result);
+let result = flatting(obj);
+console.log(result);
 
 
 
