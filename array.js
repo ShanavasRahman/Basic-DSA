@@ -186,20 +186,29 @@
 // console.log(arr);
 
 // Input: Array1: [1, 2, 3, 4, 5], Array2: [2, 4, 5]
-let arr = [1, 2, 3, 4, 5];
-let arr1 = [2, 4, 5,8];
+// let arr = [1, 2, 3, 4, 5];
+// let arr1 = [2, 4, 5,8];
 
-function finding(arr, arr1) {
-    let result = arr.every((element) => arr.includes(element));
-    let anotherResult = arr1.every((element) => arr.includes(element));
+// function finding(arr, arr1) {
+//     let result = arr.every((element) => arr.includes(element));
+//     let anotherResult = arr1.every((element) => arr.includes(element));
 
-    if (result || anotherResult) {
-        return true;
-    }
-    return false
-}
+//     if (result || anotherResult) {
+//         return true;
+//     }
+//     return false
+// }
 
-let result = finding(arr, arr1);
-console.log(result);
+// let result = finding(arr, arr1);
+// console.log(result);
+
+
+let heights = [200, 150, 175, 120];
+let names = ["marry", "john", "jeorge", "cerin"];
+
+let obj = Object.fromEntries(names.map((name,i)=>[name,heights[i]]));
+let sortedValues = Object.keys(obj).sort((a,b)=>obj[a]-obj[b]);
+console.log(sortedValues);
+
 
 
