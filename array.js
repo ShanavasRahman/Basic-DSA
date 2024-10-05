@@ -203,6 +203,8 @@
 // console.log(result);
 
 
+let heights = [200, 150, 175, 120];
+let names = ["marry", "john", "jeorge", "cerin"];
 
 let obj = Object.fromEntries(names.map((name,i)=>[name,heights[i]]));
 // let sortedValues = Object.keys(obj).sort((a,b)=>obj[a]-obj[b]);
