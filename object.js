@@ -42,7 +42,7 @@
 // // Use the key variable to dynamically add a "city" property to the object with the value "London".
 // obj[key] = "London";
 
-// console.log(obj);
+
 
 
 const obj = {
