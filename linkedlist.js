@@ -267,3 +267,4 @@ list.prepend(40);
 list.reverse();
 list.delete(50);
 list.sort()
+list.print();
