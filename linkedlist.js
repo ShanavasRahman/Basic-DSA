@@ -230,22 +230,7 @@ class LinkedList{
     }
   }
 
-  delete(target) {
-    let current = this.head;
-    let prev = null;
-    if (this.head.data == target) {
-      this.head = this.head.next;
-      return
-    }
-    while (current) {
-      if (current.data == target) {
-        prev.next = current.next;
-        return
-      }
-      prev = current;
-      current = current.next;
-    }
-  }
+
 
   print() {
     let current = this.head;
