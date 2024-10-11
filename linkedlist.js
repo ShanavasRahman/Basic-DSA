@@ -214,21 +214,7 @@ class LinkedList{
     this.head = prev;
   }
 
-  sort() {
-    let current = this.head;
-    while (current) {
-      let forward = current.next;
-      while (forward) {
-        if (current.data > forward.data) {
-          let temp = forward.data;
-          forward.data = current.data;
-          current.data = temp;
-        }
-        forward = forward.next;
-      }
-      current=current.next
-    }
-  }
+
 
   delete(target) {
     let current = this.head;
