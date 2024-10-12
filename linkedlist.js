@@ -166,9 +166,114 @@
 // console.log(long);
 
 
+// class Node{
+//   constructor(data) {
+//     this.data = data;
+//     this.next = null;
+//   }
+// }
+
+// class LinkedList{
+//   constructor() {
+//     this.head = null;
+//     this.tail = null;
+//   }
+
+//   append(data) {
+//     const newNode = new Node(data);
+//     if (this.head == null) {
+//       this.head = newNode
+//       this.tail = newNode;
+//     } else {
+//       this.tail.next = newNode;
+//       this.tail = newNode;
+//     }
+//   }
+//   prepend(data) {
+//     const newNode = new Node(data);
+//     if (this.head == null) {
+//       this.head = newNode;
+//     } else {
+//       let current = this.head;
+//       while (current.next) {
+//         current=current.next
+//       }
+//       current.next = newNode;
+//     }
+//   }
+
+//   reverse() {
+//     let current = this.head;
+//     let prev = null;
+//     while (current) {
+//       let next = current.next;
+//       current.next = prev;
+//       prev = current;
+//       current = next;
+//     }
+//     this.head = prev;
+//   }
+
+//   sort() {
+//     let current = this.head;
+//     while (current) {
+//       let forward = current.next;
+//       while (forward) {
+//         if (current.data > forward.data) {
+//           let temp = forward.data;
+//           forward.data = current.data;
+//           current.data = temp;
+//         }
+//         forward = forward.next;
+//       }
+//       current=current.next
+//     }
+//   }
+
+//   delete(target) {
+//     let current = this.head;
+//     let prev = null;
+//     if (this.head.data == target) {
+//       this.head = this.head.next;
+//       return
+//     }
+//     while (current) {
+//       if (current.data == target) {
+//         prev.next = current.next;
+//         return
+//       }
+//       prev = current;
+//       current = current.next;
+//     }
+//   }
+
+//   print() {
+//     let current = this.head;
+//     while (current) {
+//       console.log(current.data);
+//       current = current.next;
+//     }
+//   }
+// }
+
+
+
+// const list = new LinkedList();
+// list.prepend(30);
+// list.prepend(50);
+// list.prepend(10);
+// list.prepend(20);
+// list.prepend(40);
+// list.reverse();
+// list.delete(50);
+// list.sort()
+// list.print();
+
+
+
 class Node{
-  constructor(data) {
-    this.data = data;
+  constructor(value) {
+    this.data = value;
     this.next = null;
   }
 }
@@ -179,74 +284,33 @@ class LinkedList{
     this.tail = null;
   }
 
-  append(data) {
-    const newNode = new Node(data);
-    if (this.head == null) {
-      this.head = newNode
-      this.tail = newNode;
-    } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
-    }
-  }
-  prepend(data) {
-    const newNode = new Node(data);
+  append(value) {
+    let newNode = new Node(value);
     if (this.head == null) {
       this.head = newNode;
     } else {
       let current = this.head;
       while (current.next) {
-        current=current.next
+        current = current.next;
       }
       current.next = newNode;
     }
   }
-
-  reverse() {
-    let current = this.head;
-    let prev = null;
-    while (current) {
-      let next = current.next;
-      current.next = prev;
-      prev = current;
-      current = next;
-    }
-    this.head = prev;
-  }
-
-  sort() {
+  deleteDuplicate() {
     let current = this.head;
     while (current) {
-      let forward = current.next;
-      while (forward) {
-        if (current.data > forward.data) {
-          let temp = forward.data;
-          forward.data = current.data;
-          current.data = temp;
+      let now = current.next;
+      let prev = current;
+      while (now) {
+        if (current.data == now.data) {
+          prev.next = now.next;
         }
-        forward = forward.next;
+        prev = now;
+        now = now.next;
       }
-      current=current.next
-    }
-  }
-
-  delete(target) {
-    let current = this.head;
-    let prev = null;
-    if (this.head.data == target) {
-      this.head = this.head.next;
-      return
-    }
-    while (current) {
-      if (current.data == target) {
-        prev.next = current.next;
-        return
-      }
-      prev = current;
       current = current.next;
     }
   }
-
   print() {
     let current = this.head;
     while (current) {
@@ -256,15 +320,13 @@ class LinkedList{
   }
 }
 
-
-
 const list = new LinkedList();
-list.prepend(30);
-list.prepend(50);
-list.prepend(10);
-list.prepend(20);
-list.prepend(40);
-list.reverse();
-list.delete(50);
-list.sort()
+list.append(1);
+list.append(2);
+list.append(3);
+list.append(2);
+list.append(4);
+list.append(5);
+list.append(3);
+list.deleteDuplicate();
 list.print();
