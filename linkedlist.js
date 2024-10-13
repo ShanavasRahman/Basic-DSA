@@ -326,7 +326,24 @@ list.append(2);
 list.append(3);
 list.append(2);
 list.append(4);
-list.append(5);
 list.append(3);
 list.deleteDuplicate();
 list.print();
+
+class Graph{
+  constructor() {
+    this.adjList = {};
+  }
+  addVertex(vertex) {
+    if (!this.adjList[vertex]) {
+      this.adjList[vertex] = [];
+    }
+  }
+  addEdge(vertex1, vertex2) {
+    if (this.adjList[vertex1] && this.adjList[vertex2]) {
+      this.adjList[vertex1].push(vertex2);
+      this.adjList[vertex2].push(vertex1);
+    }
+  }
+  dfs()
+}
