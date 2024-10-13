@@ -360,5 +360,19 @@ class Graph{
       });
     }
   }
-
+  bfs(startingVertex) {
+    let queue = [startingVertex];
+    let visited = {};
+    visited[startingVertex] = true;
+    while (queue.length > 0) {
+      let currentVertex = queue.shift();
+      console.log(currentVertex);
+      this.adjList[currentVertex].forEach((neigbour) => {
+        if (!visited[neigbour]) {
+          visited[neigbour] = true;
+          queue.unshift
+        }
+      })
+    }
+  }
 }
