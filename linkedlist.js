@@ -345,7 +345,21 @@ class Graph{
       this.adjList[vertex2].push(vertex1);
     }
   }
-
+  dfs(startingVertex) {
+    let stack = [startingVertex];
+    let visited = {}
+    visited[startingVertex] = true;
+    while (stack.length > 0) {
+      let currentVertex = stack.pop();
+      console.log(currentVertex);
+      this.adjList[currentVertex].forEach(neigbour => {
+        if (!visited[neigbour]) {
+          visited[neigbour] = true;
+          stack.push(neigbour);
+        }
+      });
+    }
+  }
   bfs(startingVertex) {
     let queue = [startingVertex];
     let visited = {};
