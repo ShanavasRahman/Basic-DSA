@@ -370,7 +370,7 @@ class Graph{
       this.adjList[currentVertex].forEach((neigbour) => {
         if (!visited[neigbour]) {
           visited[neigbour] = true;
-          
+          queue.unshift
         }
       })
     }
