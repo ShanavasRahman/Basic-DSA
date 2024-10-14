@@ -45,16 +45,16 @@
 // console.log(obj);
 
 
-// const obj = {
-//     name: "John",
-//     address: {
-//       city: "New York",
-//       zip: {
-//         code: 10001,
-//         country: "USA"
-//       }
-//     },
-//   };
+const obj = {
+    name: "John",
+    address: {
+      city: "New York",
+      zip: {
+        code: 10001,
+        country: "USA"
+      }
+    },
+  };
 
 
 
