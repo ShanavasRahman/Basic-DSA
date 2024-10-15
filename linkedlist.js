@@ -311,7 +311,13 @@ class LinkedList{
       current = current.next;
     }
   }
-
+  print() {
+    let current = this.head;
+    while (current) {
+      console.log(current.data);
+      current = current.next;
+    }
+  }
 }
 
 
