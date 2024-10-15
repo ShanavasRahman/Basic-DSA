@@ -319,4 +319,14 @@ class LinkedList{
     }
   }
 }
+const list = new LinkedList();
+list.prepend(30);
+list.prepend(50);
+list.prepend(10);
+list.prepend(20);
+list.prepend(40);
+list.reverse();
+list.delete(50);
+list.sort()
+list.print();
 
