@@ -296,21 +296,7 @@ class LinkedList{
       current.next = newNode;
     }
   }
-  deleteDuplicate() {
-    let current = this.head;
-    while (current) {
-      let now = current.next;
-      let prev = current;
-      while (now) {
-        if (current.data == now.data) {
-          prev.next = now.next;
-        }
-        prev = now;
-        now = now.next;
-      }
-      current = current.next;
-    }
-  }
+
 
 }
 
