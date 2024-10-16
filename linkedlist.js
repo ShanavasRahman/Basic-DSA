@@ -278,45 +278,4 @@ class Node{
   }
 }
 
-class LinkedList{
-  constructor() {
-    this.head = null;
-    this.tail = null;
-  }
-
-  append(value) {
-    let newNode = new Node(value);
-    if (this.head == null) {
-      this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
-  }
-  deleteDuplicate() {
-    let current = this.head;
-    while (current) {
-      let now = current.next;
-      let prev = current;
-      while (now) {
-        if (current.data == now.data) {
-          prev.next = now.next;
-        }
-        prev = now;
-        now = now.next;
-      }
-      current = current.next;
-    }
-  }
-  print() {
-    let current = this.head;
-    while (current) {
-      console.log(current.data);
-      current = current.next;
-    }
-  }
-}
 
