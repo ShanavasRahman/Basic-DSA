@@ -284,18 +284,7 @@ class LinkedList{
     this.tail = null;
   }
 
-  append(value) {
-    let newNode = new Node(value);
-    if (this.head == null) {
-      this.head = newNode;
-    } else {
-      let current = this.head;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = newNode;
-    }
-  }
+
 
   print() {
     let current = this.head;
