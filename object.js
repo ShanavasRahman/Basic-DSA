@@ -77,7 +77,7 @@ function flatting(obj, parentKey, result) {
             result[newKey] = obj[key];
         }
     }
-    return ;
+    return result;
 }
   
 let result = flatting(obj);
