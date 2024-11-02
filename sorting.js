@@ -1,4 +1,4 @@
-//Bubble sort
+// Bubble sort
 
 // let arr = [5, 3, 7, 2, 8, 6];
 
@@ -48,23 +48,23 @@
 
 // let a = [5, 6, 3, 8, 2];
 
-// function quickSort(a) {
-//     if (a.length <= 1) {
-//         return a
-//     }
-//     let pivot = a[0];
-//     let left = [];
-//     let right = [];
+function quickSort(a) {
+    if (a.length <= 1) {
+        return a
+    }
+    let pivot = a[0];
+    let left = [];
+    let right = [];
 
-//     for (let i = 1; i < a.length; i++){
-//         if (a[i] < pivot) {
-//             left.push(a[i]);
-//         } else {
-//             right.push(a[i]);
-//         }
-//     }
-//     return [...quickSort(left), pivot, ...quickSort(right)];
+    for (let i = 1; i < a.length; i++){
+        if (a[i] < pivot) {
+            left.push(a[i]);
+        } else {
+            right.push(a[i]);
+        }
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
     
-// }
+}
 
 // console.log(quickSort(a));
