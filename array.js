@@ -217,6 +217,19 @@ let arr=[21,243,4567,8769];
 //output:[9678,7654,342,12]
 let newArr=[];
 let newArrLength=arr.length-1;
+function splitting(num){
+    let reversed=0;
+    while(num>0){
+        let lastDigit=num%10;
+        reversed=reversed*10+lastDigit;
+        num=Math.floor(num/10);
+    }
+    newArr[newArrLength]=reversed;
+    newArrLength--;
+}
+for(let i=0;i<arr.length;i++){
+    splitting(arr[i]);
+}
 
 console.log(newArr);
 
