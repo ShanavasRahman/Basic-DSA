@@ -189,15 +189,7 @@
 // let arr = [1, 2, 3, 4, 5];
 // let arr1 = [2, 4, 5,8];
 
-// function finding(arr, arr1) {
-//     let result = arr.every((element) => arr.includes(element));
-//     let anotherResult = arr1.every((element) => arr.includes(element));
 
-//     if (result || anotherResult) {
-//         return true;
-//     }
-//     return false
-// }
 
 // let result = finding(arr, arr1);
 // console.log(result);
