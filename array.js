@@ -172,13 +172,7 @@
 // };
 // console.log(second);
 
-// Problem: Given an array, rotate the array to the right by k steps.
-// Example:
-// Input: [1, 2, 3, 4, 5, 6, 7], k = 3
-// Output: [5, 6, 7, 1, 2, 3, 4]
 
-// let arr = [1, 2, 3, 4, 5, 6, 7];
-// let k = 6;
 
 
 // let nums=arr.splice(arr.length - k, k);
