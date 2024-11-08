@@ -215,6 +215,7 @@ let obj = Object.fromEntries(names.map((name,i)=>[name,heights[i]]));
 
 let arr=[21,243,4567,8769];
 //output:[9678,7654,342,12]
+let newArr=[];
 let newArrLength=arr.length-1;
 function splitting(num){
     let reversed=0;
