@@ -57,42 +57,7 @@ class BST{
         return this.deleteNode(this.root, value);
     }
 
-    deleteNode(node, value) {
-        if (value<node.value) {
-            node.left = this.deleteNode(node.left, value);
-            return node
-        } else if (value > node.value) {
-            node.right = this.deleteNode(node.right, value);
-            return node
-        } else {
-            //if it is leaf node
-
-            if (node.right == null && node.left == null) {
-                node = null;
-                return node;
-            }
-
-            // if it has one child
-
-            if (node.right == null) {
-                node = node.left;
-                return node
-            } else if (node.left == null) {
-                node = node.right;
-                return node
-            }
-
-            //if it has two children
-
-            const minNode = this.findMinNode(node.right);
-            node.value = minNode.value;
-
-            //delete the successor
-            node.right = this.deleteNode(node.right, minNode.value);
-            return node;
-
-        }
-    }
+   
 
     findMinNode(node) {
         if (node.left == null) {
