@@ -94,13 +94,6 @@ class BST{
         }
     }
 
-    findMinNode(node) {
-        if (node.left == null) {
-            return node;
-        } else {
-           return this.findMinNode(node.left)
-        }
-    }
 
 
 
