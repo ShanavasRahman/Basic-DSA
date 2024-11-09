@@ -104,7 +104,13 @@ class BST{
 
 
 
-
+    inOrder(node = this.root) {
+        if (node != null) {
+            this.inOrder(node.left);
+            console.log(node.value);
+            this.inOrder(node.right);
+        }
+    }
 }
 
 
