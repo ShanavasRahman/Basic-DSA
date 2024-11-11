@@ -54,11 +54,7 @@ class Graph{
         }
     }
 
-    print() {
-        for (let vertex in this.adjList) {
-            console.log(`${vertex} ---> ${this.adjList[vertex].join(',')}`);
-        }
-    }
+
 }
 
 
