@@ -18,22 +18,7 @@ class Graph{
         }
     }
 
-    bfs(startingVertex) {
-        const queue = [startingVertex];
-        const visited = {};
-        visited[startingVertex] = true;
-        while (queue.length > 0) {
-            const currentVertex = queue.shift();
-            console.log(currentVertex);
 
-            this.adjList[currentVertex].forEach(neighbourVertex => {
-                if (!visited[neighbourVertex]) {
-                    visited[neighbourVertex] = true;
-                    queue.push(neighbourVertex);
-                }
-            });
-        }
-    }
 
     dfs(startingVertex) {
         const stack = [startingVertex];
