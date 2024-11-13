@@ -16,10 +16,7 @@ class Heap{
     }
 
 
-    insert(value) {
-        this.heap.push(value);
-        this.heapifyUp(this.heap.length-1)
-    }
+
     heapifyUp(index) {
         let parentIndex = this.getParent(index);
         while (index > 0 && this.heap[index] > this.heap[parentIndex]) {
