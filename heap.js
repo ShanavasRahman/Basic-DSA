@@ -20,7 +20,14 @@ class Heap{
         this.heap.push(value);
         this.heapifyUp(this.heap.length-1)
     }
-    
+    heapifyUp(index) {
+        let parentIndex = this.getParent(index);
+        while (index > 0 && this.heap[index] > this.heap[parentIndex]) {
+            this.swap(index, parentIndex);
+            index = parentIndex;
+            parentIndex = this.getParent(index);
+        }
+    }
     print() {
         console.log(this.heap);
     }
