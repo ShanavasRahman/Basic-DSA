@@ -28,7 +28,9 @@ class Heap{
             parentIndex = this.getParent(index);
         }
     }
-    
+    print() {
+        console.log(this.heap);
+    }
 }
 
 
