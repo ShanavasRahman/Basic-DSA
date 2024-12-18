@@ -59,6 +59,26 @@
 
 
 
+function flatting(obj, parentKey, result) {
+    parentKey = parentKey || "";
+    result = result || {};
+
+    for (let key in obj) {
+        let newKey
+            if (parentKey == "") {
+                newKey = key;
+            } else {
+                newKey = parentKey + "." + key;
+            }
+        
+        if (typeof obj[key] == 'object' && obj[key] != null) {
+            flatting(obj[key],newKey,result)
+        } else {
+            result[newKey] = obj[key];
+        }
+    }
+    return result;
+}
   
 let result = flatting(obj);
 console.log(result);
