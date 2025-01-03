@@ -135,7 +135,12 @@
 // let count = {};
 // let newArr=[]
 
-
+// for (let i = 0; i < arr.length; i++){
+//     if (!count[arr[i]]) {
+//         count[arr[i]] = 1;
+//     } else {
+//         count[arr[i]]++;
+//     }
 // }
 // for (let key in count) {
 //     if (count[key] > 1) {
