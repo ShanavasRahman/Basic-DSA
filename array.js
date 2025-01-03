@@ -151,11 +151,7 @@
 
 // let obj = { name: 'hisham', email: 'hisham@gmail.com' }
 
-// let result = '';
-// for (let key in obj) {
-//     result += `${key}=${obj[key]} `;
-// }
-// console.log(result);
+
 
 //Second largest
 
