@@ -160,7 +160,17 @@
 //Second largest
 
 // let arr = [5, 20, 2, 6];
-le.log(second);
+// let first = 0;
+// let second = 0;
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] > first) {
+//     second = first;
+//     first = arr[i];
+//   } else if (arr[i] < first && arr[i] > second) {
+//     second = arr[i];
+//   }
+// };
+// console.log(second);
 
 // Problem: Given an array, rotate the array to the right by k steps.
 // Example:
